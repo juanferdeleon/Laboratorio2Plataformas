@@ -13,6 +13,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var lapHistory: LapHistory
+
+
+
         val newLap = findViewById<Button>(R.id.newlap)
 
         newLap.setOnClickListener {
