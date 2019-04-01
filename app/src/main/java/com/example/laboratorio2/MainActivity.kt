@@ -1,5 +1,6 @@
 package com.example.laboratorio2
 
+import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -20,12 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        lapHistory.add(1)
-        lapHistory.add(5)
-        lapHistory.add(10)
-        lapHistory.add(15)
-
-        val listViewHistory = findViewById<ListView>(R.id.history)
+        var listViewHistory = findViewById<ListView>(R.id.history)
 
         listViewHistory.adapter = ArrayAdapter<Int>(this, android.R.layout.simple_list_item_1, lapHistory.lapHistory)
 
@@ -34,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         newLap.setOnClickListener {
             val intent = Intent(this, NewTurn::class.java).putExtra("lapHistory", lapHistory.lapHistory)
-            startActivity(intent)
+            startActivityForResult(intent, 2)
         }
 
         //Clear history button
@@ -61,4 +57,16 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        var listViewHistory = findViewById<ListView>(R.id.history)
+
+        if (requestCode == 2 && resultCode == Activity.RESULT_OK){
+            lapHistory.lapHistory = data!!.getSerializableExtra("newLapHistory") as ArrayList<Int>
+            listViewHistory.adapter = ArrayAdapter<Int>(this, android.R.layout.simple_list_item_1, lapHistory.lapHistory)
+        }
+    }
+
 }

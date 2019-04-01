@@ -1,5 +1,6 @@
 package com.example.laboratorio2
 
+import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -92,7 +93,8 @@ class NewTurn : AppCompatActivity() {
                 laps.add(newAmount)
 
                 val intent = Intent(this, MainActivity::class.java).putExtra("newLapHistory", laps)
-                startActivity(intent)
+                setResult(Activity.RESULT_OK, intent)
+                finish()
             }
 
         }
@@ -102,13 +104,14 @@ class NewTurn : AppCompatActivity() {
 
         mainMenu.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java).putExtra("newLapHistory", laps)
-            startActivity(intent)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
         }
 
         //Sets the lap counter to one on the listview
         listViewHistory.setOnItemClickListener { parent, view, position, id ->
             var newText = findViewById<TextView>(R.id.amount).apply {
-                text = laps.get(position).toString()
+                text = recLaps.get(position).toString()
             }
         }
 
