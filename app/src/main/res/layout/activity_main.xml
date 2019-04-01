@@ -20,14 +20,14 @@
             android:layout_marginEnd="119dp" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintVertical_chainStyle="packed" android:layout_marginTop="24dp"/>
     <ImageView
-            android:layout_width="271dp"
-            android:layout_height="318dp" app:srcCompat="@drawable/logo"
+            android:layout_width="199dp"
+            android:layout_height="174dp" app:srcCompat="@drawable/logo"
             android:id="@+id/imageView" tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="70dp" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="70dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/newlap" app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintBottom_toTopOf="@+id/newlap"/>
 
     <Button android:layout_width="138dp"
             android:text="Nuevo Entreno"
@@ -51,8 +51,10 @@
             android:layout_marginEnd="136dp"
             android:text="Borrar Historial"/>
     <ListView
+            android:background="#006699"
+            android:id="@+id/history"
             android:layout_width="395dp"
-            android:layout_height="94dp" android:layout_marginTop="8dp"
+            android:layout_height="305dp" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/deleteH"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>

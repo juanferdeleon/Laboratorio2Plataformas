@@ -4,10 +4,9 @@ package com.example.laboratorio2
  * Lap class
  * @author Juan Fernando De Leon Quezada
  */
-class Laps: LapHistory {
+class Laps: LapHistory{
 
-
-    override val lapHistory: ArrayList<Int> = ArrayList()// Historial de vueltas
+    override var lapHistory = ArrayList<Int>()
 
     override fun clear(){
         lapHistory.clear()

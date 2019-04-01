@@ -21,10 +21,10 @@
             app:layout_constraintTop_toTopOf="parent" android:id="@+id/textView"
             app:layout_constraintVertical_bias="0.092"/>
     <TextView
-            android:text="TextView"
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/amount" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="176dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="176dp" android:layout_marginTop="31dp"
             app:layout_constraintTop_toBottomOf="@+id/textView" android:textSize="30sp"/>
@@ -32,44 +32,49 @@
             android:text="-"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button" android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/sub" android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/amount" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="56dp"/>
     <Button
             android:text="+"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button2" android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:id="@+id/add" android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/amount"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="56dp"/>
     <Button
             android:text="Agregar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button3" android:layout_marginTop="116dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/addHistory" android:layout_marginTop="85dp"
+            app:layout_constraintTop_toBottomOf="@+id/amount" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="161dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="162dp"/>
     <Button
             android:text="Inicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button4" android:layout_marginTop="25dp"
-            app:layout_constraintTop_toBottomOf="@+id/button3" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/mainMenu" android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/addHistory" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="161dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="162dp"/>
     <TextView
             android:text="Vueltas Predeterminadas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3" android:layout_marginTop="48dp"
-            app:layout_constraintTop_toBottomOf="@+id/button4" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/textView3" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/mainMenu" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="125dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="126dp"/>
+            android:layout_marginEnd="126dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/recomended"/>
     <ListView
             android:layout_width="395dp"
-            android:layout_height="214dp" tools:layout_editor_absoluteX="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+            android:layout_height="146dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" android:id="@+id/recomended"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintHorizontal_bias="0.0"/>
 
 
 </android.support.constraint.ConstraintLayout>
