@@ -8,6 +8,10 @@ import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
 
+/**
+ * Main Activity
+ * @author Juan Fernando De Leon Quezada
+ */
 class MainActivity : AppCompatActivity() {
 
     var lapHistory: LapHistory = Laps()
@@ -36,12 +40,14 @@ class MainActivity : AppCompatActivity() {
         //Clear history button
         val clearHistory = findViewById<Button>(R.id.deleteH)
 
+        //Delete all items from listView
         clearHistory.setOnClickListener{
             lapHistory.clear()
             Toast.makeText(this, "Se elimino el historial", Toast.LENGTH_SHORT).show()
             listViewHistory.adapter = ArrayAdapter<Int>(this, android.R.layout.simple_list_item_1, lapHistory.lapHistory)
         }
 
+        //Delet specific item OnClick from listview
         listViewHistory.setOnItemClickListener { parent, view, position, id ->
             var i = 0
             while (i < lapHistory.lapHistory.size){

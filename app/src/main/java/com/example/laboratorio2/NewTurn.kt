@@ -4,9 +4,12 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
-import java.util.*
 import kotlin.collections.ArrayList
 
+/**
+ * Activity 2
+ * @author Juan Fernando De Leon Quezada
+ */
 class NewTurn : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -102,6 +105,7 @@ class NewTurn : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //Sets the lap counter to one on the listview
         listViewHistory.setOnItemClickListener { parent, view, position, id ->
             var newText = findViewById<TextView>(R.id.amount).apply {
                 text = laps.get(position).toString()
